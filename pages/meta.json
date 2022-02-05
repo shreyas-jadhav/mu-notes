@@ -1,7 +1,9 @@
 {
-  "index": "Introduction",
-  "get-started": "Get Started",
-  "features": "Features",
-  "themes": "Themes",
-  "advanced": "Advanced"
+  "index": "About",
+  "sem3": "Semester 3 Courses",
+  "sem4": "Semester 4 Courses",
+  "dlca": "Digital Logic & Computer Architecture",
+  "computer-graphics": "Computer Graphics"
+
+  
 }
