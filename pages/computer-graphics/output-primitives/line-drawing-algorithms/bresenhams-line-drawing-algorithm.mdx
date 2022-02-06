@@ -1,0 +1,24 @@
+# Bresenham's Line Algorithm
+
+An accurate and efficient raster line-generating algorithm,
+developed by **Bresenham**, scan converts lines using
+only **incrementa1 integer calculations** that can be
+further adapted to display circles and other curves.
+
+1. Input the two line endpoints and store the left endpoint in (x<sub>0</sub>,y<sub>0</sub>)
+2. Load (x<sub>0</sub>,y<sub>0</sub>) into the frame buffer; i.e, plot the first point.
+3. Calculate constants &Delta;x, &Delta;y, 2&Delta;y, and 2&Delta;y - 2&Delta;x,
+   and obtain the starting value for the decision parameter as <br/>
+   p<sub>0</sub> = 2&Delta;y - &Delta;X
+   <br />
+4. At each x<sub>k</sub> along the line, starting at k = 0, perform the following test:
+
+   If p<sub>k</sub> < 0, the next point to plot is (x<sub>k</sub> + 1 , y<sub>k</sub> and
+
+   p<sub>k + 1</sub>= p<sub>k</sub> + 2&Delta;y
+
+   Otherwise, the next point to plot is (x<sub>k</sub> + 1 , y<sub>k</sub> + 1) and
+
+   p<sub>k + 1</sub>= p<sub>k</sub> + 2&Delta;y - 2&Delta;x
+
+5. Repeat step 4 &Delta;x times

@@ -1,0 +1,49 @@
+# DDA Algorithm
+
+The **digital drflerential analyzer (DDA)** is a scan-conversion line algorithm.
+
+This algorithm is summarized in the following procedure
+
+1. Accept the two end points pixel positions as input.
+
+   A(x<sub>1</sub>, y<sub>1</sub>)<br />
+   B(x<sub>2</sub>, y<sub>2</sub>)
+
+   <br />
+
+2. Horizontal and vertical differences between the endpoint positions
+   are assigned to parameters **d<sub>x</sub>** and **d<sub>y</sub>**.
+
+   d<sub>x</sub> = x<sub>2</sub> - x<sub>1</sub><br/>
+   d<sub>y</sub> = y<sub>2</sub> - y<sub>1</sub>
+
+   <br />
+
+3. The difference with the greater magnitude determines the value of parameter **`steps`**.
+
+   if |d<sub>x</sub>| > |d<sub>y</sub>| &nbsp;&nbsp;&nbsp;&nbsp; (compare absolute values of d<sub>x</sub> and d<sub>y</sub>) <br />
+   &nbsp;&nbsp;&nbsp;&nbsp;steps = d<sub>x</sub><br />
+   else<br />
+   &nbsp;&nbsp;&nbsp;&nbsp;steps = d<sub>y</sub>
+
+4. We determine the Incremental Factor needed at each step to
+   generate the next pixel position along the line path.
+
+   &Delta;x = d<sub>x</sub> &frasl; steps <br />
+   &Delta;y = d<sub>y</sub> &frasl; steps <br />
+
+5. Plot the initial points on the line
+
+   x<sub>new</sub> = x<sub>1</sub> <br />
+   y<sub>new</sub> = y<sub>1</sub> <br />
+
+   setPixel ( x<sub>new</sub> , y<sub>new</sub> )
+
+6. Generate new pixel on line by incrementing x and y, we repeat the process `steps` times.
+
+   for (k = 0; k < steps; k++) <br />
+
+   &nbsp;&nbsp;&nbsp;&nbsp;x<sub>new</sub> = x<sub>new</sub> + &Delta;x <br />
+   &nbsp;&nbsp;&nbsp;&nbsp;y<sub>new</sub> = y<sub>new</sub> + &Delta;y <br />
+
+   &nbsp;&nbsp;&nbsp;&nbsp;setPixel ( x<sub>new</sub> , y<sub>new</sub> )

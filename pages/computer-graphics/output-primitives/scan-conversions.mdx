@@ -1,0 +1,23 @@
+# 2.1 Scan conversions of point, line, midpoint algorithm for ellipse
+
+## 1. Point
+
+- Point plotting is accomplished by **converting a single coordinate position**,
+  furnished by an application program into appropriate operations for the output
+  device in use.
+- For example, in CRT Monitor an electron beam is turned on.
+- For black and white raster systems a bit values is set corresponding to specified screen position. Then, as the electron beam sweeps across each horizontal scan line, it emits a burst of electors whenever a value of 1 is encountered.
+
+## 2. Line
+
+- Line drawing is accomplished by **calculating intermediate positions along
+  the line path** between two specified endpoint positions.
+- An output device is then directed to **fill in these positions**
+  between the endpoints.
+- Digital devices display a straight line segment by plotting
+  **discrete points**
+  between the two endpoints.
+- Discrete coordinate positions along the line path are
+  calculated from the equation of the line and algorithms.
+
+See [Line Drawing Algorithms](/computer-graphics/output-primitives/line-drawing-algorithms)
